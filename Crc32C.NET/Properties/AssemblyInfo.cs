@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Crc32C.NET")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("CRC-32C for .NET")]
+[assembly: AssemblyDescription("CRC-32C (Castagnoli) with hardware acceleration where available")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Crc32C.NET")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("Robert Važan")]
+[assembly: AssemblyProduct("CRC-32C for .NET")]
+[assembly: AssemblyCopyright("Copyright © 2014 Robert Važan")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
