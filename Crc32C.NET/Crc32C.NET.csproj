@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crc32CAlgorithm.cs" />
     <Compile Include="Native32.cs" />
     <Compile Include="Native64.cs" />
     <Compile Include="NativeProxy.cs" />
