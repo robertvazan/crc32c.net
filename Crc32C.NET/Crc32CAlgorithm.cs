@@ -5,10 +5,38 @@ using System.Text;
 
 namespace Crc32C
 {
+    /// <summary>
+    /// Implementation of CRC-32C (Castagnoli) with polynomial 0x82f63b78.
+    /// It can detect errors more reliably than the older CRC-32.
+    /// This class will use crc32 instruction on recent Intel processors if it is available.
+    /// Otherwise it will transparently fall back to a very fast software implementation.
+    /// Besides standard HashAlgorithm methods,
+    /// this class supports several convenient instance methods returning the CRC as UInt32.
+    /// </summary>
     public class Crc32CAlgorithm : HashAlgorithm
     {
         uint CurrentCrc;
 
+        /// <summary>
+        /// Creates new instance of Crc32CAlgorithm.
+        /// </summary>
+        Crc32CAlgorithm()
+        {
+            HashSizeValue = 4;
+        }
+
+        /// <summary>
+        /// Computes CRC-32C from multiple buffers.
+        /// Call this method multiple times to chain multiple buffers.
+        /// </summary>
+        /// <param name="initial">
+        /// Initial CRC value for the algorithm. It is zero for the first buffer.
+        /// Subsequent buffers should have their initial value set to CRC value returned by previous call to this method.
+        /// </param>
+        /// <param name="input">Input buffer with data to be checksummed.</param>
+        /// <param name="offset">Offset of the input data within the buffer.</param>
+        /// <param name="length">Length of the input data in the buffer.</param>
+        /// <returns>Accumulated CRC-32C of all buffers processed so far.</returns>
         public static uint Append(uint initial, byte[] input, int offset, int length)
         {
             if (input == null)
@@ -18,6 +46,16 @@ namespace Crc32C
             return AppendInternal(initial, input, offset, length);
         }
 
+        /// <summary>
+        /// Computes CRC-32C from multiple buffers.
+        /// Call this method multiple times to chain multiple buffers.
+        /// </summary>
+        /// <param name="initial">
+        /// Initial CRC value for the algorithm. It is zero for the first buffer.
+        /// Subsequent buffers should have their initial value set to CRC value returned by previous call to this method.
+        /// </param>
+        /// <param name="input">Input buffer containing data to be checksummed.</param>
+        /// <returns>Accumulated CRC-32C of all buffers processed so far.</returns>
         public static uint Append(uint initial, byte[] input)
         {
             if (input == null)
@@ -25,16 +63,31 @@ namespace Crc32C
             return AppendInternal(initial, input, 0, input.Length);
         }
 
+        /// <summary>
+        /// Computes CRC-32C from input buffer.
+        /// </summary>
+        /// <param name="input">Input buffer with data to be checksummed.</param>
+        /// <param name="offset">Offset of the input data within the buffer.</param>
+        /// <param name="length">Length of the input data in the buffer.</param>
+        /// <returns>CRC-32C of the data in the buffer.</returns>
         public static uint Compute(byte[] input, int offset, int length)
         {
             return Append(0, input, offset, length);
         }
 
+        /// <summary>
+        /// Computes CRC-32C from input buffer.
+        /// </summary>
+        /// <param name="input">Input buffer containing data to be checksummed.</param>
+        /// <returns>CRC-32C of the buffer.</returns>
         public static uint Compute(byte[] input)
         {
             return Append(0, input);
         }
 
+        /// <summary>
+        /// Resets internal state of the algorithm. Used internally.
+        /// </summary>
         public override void Initialize()
         {
             CurrentCrc = 0;
@@ -50,7 +103,7 @@ namespace Crc32C
             return BitConverter.GetBytes(CurrentCrc);
         }
 
-        public static unsafe uint AppendInternal(uint initial, byte[] input, int offset, int length)
+        static unsafe uint AppendInternal(uint initial, byte[] input, int offset, int length)
         {
             if (length > 0)
             {
