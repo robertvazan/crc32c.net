@@ -20,7 +20,7 @@ namespace Crc32C
         /// <summary>
         /// Creates new instance of Crc32CAlgorithm.
         /// </summary>
-        Crc32CAlgorithm()
+        public Crc32CAlgorithm()
         {
             HashSizeValue = 4;
         }

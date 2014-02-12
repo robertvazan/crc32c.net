@@ -14,11 +14,11 @@ namespace Crc32C
         protected NativeProxy(string name)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var folder = Path.Combine(Path.GetTempPath(), "Snappy.NET-" + assembly.GetName().Version.ToString());
+            var folder = Path.Combine(Path.GetTempPath(), "Crc32C.NET-" + assembly.GetName().Version.ToString());
             Directory.CreateDirectory(folder);
             var path = Path.Combine(folder, name);
             byte[] contents;
-            using (var input = assembly.GetManifestResourceStream("Snappy." + name))
+            using (var input = assembly.GetManifestResourceStream("Crc32C." + name))
             using (var buffer = new MemoryStream())
             {
                 byte[] block = new byte[4096];

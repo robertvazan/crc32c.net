@@ -4,3 +4,5 @@ obj
 *.suo
 *.user
 native
+syntax: regexp
+packages/.*[0-9].*
