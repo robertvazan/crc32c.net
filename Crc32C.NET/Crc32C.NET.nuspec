@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://crc32c.angeloflogic.com/license-net/</licenseUrl>
+    <projectUrl>http://crc32c.angeloflogic.com/</projectUrl>
+    <iconUrl>http://crc32c.angeloflogic.com/images/nuget-icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Updated nuget description.</releaseNotes>
+    <copyright>Copyright (c) 2014 Robert Važan</copyright>
+    <tags>crc, crc32, crc-32, crc32c, crc-32c, castagnoli, managed</tags>
+  </metadata>
+</package>
