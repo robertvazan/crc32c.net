@@ -6,12 +6,12 @@ using System.Text;
 namespace Crc32C
 {
     /// <summary>
-    /// Implementation of CRC-32C (Castagnoli) with polynomial 0x82f63b78.
-    /// It can detect errors more reliably than the older CRC-32.
-    /// This class will use crc32 instruction on recent Intel processors if it is available.
+    /// Implementation of CRC-32C (Castagnoli) with polynomial 0x1EDC6F41.
+    /// It can detect errors more reliably than the older CRC-32-IEEE.
+    /// This class will use CRC32 instruction on recent Intel processors if it is available.
     /// Otherwise it will transparently fall back to a very fast software implementation.
     /// Besides standard HashAlgorithm methods,
-    /// this class supports several convenient instance methods returning the CRC as UInt32.
+    /// this class supports several convenient static methods returning the CRC as UInt32.
     /// </summary>
     public class Crc32CAlgorithm : HashAlgorithm
     {
