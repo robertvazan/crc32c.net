@@ -11,7 +11,7 @@
     <iconUrl>http://crc32c.angeloflogic.com/images/nuget-icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Updated nuget description.</releaseNotes>
+    <releaseNotes>XP compatibility.</releaseNotes>
     <copyright>Copyright (c) 2014 Robert Važan</copyright>
     <tags>crc, crc32, crc-32, crc32c, crc-32c, castagnoli, managed</tags>
   </metadata>
