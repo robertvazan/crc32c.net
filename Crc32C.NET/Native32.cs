@@ -14,7 +14,7 @@ namespace Crc32C
             return crc32c_append(crc, input, checked((uint)length));
         }
 
-        [DllImport("crc32c32.dll")]
+        [DllImport("crc32c32.dll", CallingConvention = CallingConvention.Cdecl)]
         static unsafe extern uint crc32c_append(uint crc, byte* input, uint length);
     }
 }
