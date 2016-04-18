@@ -22,7 +22,7 @@ namespace Crc32C
         /// </summary>
         public Crc32CAlgorithm()
         {
-            HashSizeValue = 4;
+            HashSizeValue = 32;
         }
 
         /// <summary>
