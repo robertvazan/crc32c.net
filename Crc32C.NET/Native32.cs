@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Runtime.InteropServices;
 
 namespace Crc32C
 {
@@ -9,9 +6,15 @@ namespace Crc32C
     {
         public Native32() : base("crc32c32.dll") { }
 
-        public unsafe override uint Append(uint crc, byte* input, int length)
+		public override uint Append(uint crc, byte[] input, int offset, int length)
+		{
+			return AppendInternal(crc, input, offset, length);
+		}
+
+        private unsafe uint AppendInternal(uint initial, byte[] input, int offset, int length)
         {
-            return crc32c_append(crc, input, checked((uint)length));
+			fixed (byte* ptr = &input[offset])
+				return crc32c_append(initial, ptr, checked((uint)length));
         }
 
         [DllImport("crc32c32.dll", CallingConvention = CallingConvention.Cdecl)]

@@ -39,11 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseProxy.cs" />
     <Compile Include="Crc32CAlgorithm.cs" />
     <Compile Include="Native32.cs" />
     <Compile Include="Native64.cs" />
     <Compile Include="NativeProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SafeProxy.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>

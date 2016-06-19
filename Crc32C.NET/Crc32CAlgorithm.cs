@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace Crc32C
 {
@@ -10,6 +8,7 @@ namespace Crc32C
     /// It can detect errors more reliably than the older CRC-32-IEEE.
     /// This class will use CRC32 instruction on recent Intel processors if it is available.
     /// Otherwise it will transparently fall back to a very fast software implementation.
+    /// If it impossible to use native implementation, calculation will fallback to fast .NET safe implementation.
     /// Besides standard HashAlgorithm methods,
     /// this class supports several convenient static methods returning the CRC as UInt32.
     /// </summary>
@@ -93,7 +92,7 @@ namespace Crc32C
             CurrentCrc = 0;
         }
 
-        protected override unsafe void HashCore(byte[] input, int offset, int length)
+        protected override void HashCore(byte[] input, int offset, int length)
         {
             CurrentCrc = AppendInternal(CurrentCrc, input, offset, length);
         }
@@ -103,12 +102,11 @@ namespace Crc32C
             return BitConverter.GetBytes(CurrentCrc);
         }
 
-        static unsafe uint AppendInternal(uint initial, byte[] input, int offset, int length)
+        private static uint AppendInternal(uint initial, byte[] input, int offset, int length)
         {
             if (length > 0)
             {
-                fixed (byte* ptr = &input[offset])
-                    return NativeProxy.Instance.Append(initial, ptr, length);
+                  return BaseProxy.Instance.Append(initial, input, offset, length);
             }
             else
                 return initial;
