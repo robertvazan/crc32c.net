@@ -6,9 +6,9 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>http://crc32c.angeloflogic.com/license-net/</licenseUrl>
-    <projectUrl>http://crc32c.angeloflogic.com/</projectUrl>
-    <iconUrl>http://crc32c.angeloflogic.com/images/nuget-icon.png</iconUrl>
+    <licenseUrl>https://crc32c.machinezoo.com/license-net/</licenseUrl>
+    <projectUrl>https://crc32c.machinezoo.com/</projectUrl>
+    <iconUrl>https://crc32c.machinezoo.com/images/nuget-icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Fixed native calling convention.</releaseNotes>
