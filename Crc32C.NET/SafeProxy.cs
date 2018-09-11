@@ -1,3 +1,4 @@
+// Part of CRC-32C library: https://crc32c.machinezoo.com/
 ﻿/* This is .NET safe implementation of Crc32C algorithm.
  * This implementation was found fastest from some variants, based on Robert Vazan native implementations
  * Also, it is good for x64 and for x86, so, it seems, there is no sense to do 2 different realizations.

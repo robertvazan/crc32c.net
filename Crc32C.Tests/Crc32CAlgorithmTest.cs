@@ -1,3 +1,4 @@
+// Part of CRC-32C library: https://crc32c.machinezoo.com/
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;

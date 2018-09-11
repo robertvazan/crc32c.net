@@ -1,3 +1,4 @@
+// Part of CRC-32C library: https://crc32c.machinezoo.com/
 ﻿using System;
 using System.Security;
 using System.Security.Permissions;
