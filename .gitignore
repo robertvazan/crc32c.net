@@ -1,9 +1,7 @@
-syntax: glob
 bin
 obj
 *.suo
 *.user
 native
 *.nupkg
-syntax: regexp
-packages/.*[0-9].*
+
