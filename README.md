@@ -8,7 +8,7 @@ Actual CRC-32C algorithm is implemented in C++. .NET wrapper transparently route
 * Download: see [Tutorial for .NET](https://crc32c.machinezoo.com/#net)
 * Sources: [GitHub](https://github.com/robertvazan/crc32c.net), [Bitbucket](https://bitbucket.org/robertvazan/crc32c.net)
 * Issues: [GitHub](https://github.com/robertvazan/crc32c.net/issues), [Bitbucket](https://bitbucket.org/robertvazan/crc32c.net/issues)
-* License: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+* License: [BSD license](https://opensource.org/licenses/BSD-3-Clause)
 
 ***
 
