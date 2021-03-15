@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Fixed native calling convention.</releaseNotes>
-    <copyright>Copyright (c) 2014-2020 Robert Važan</copyright>
+    <copyright>Copyright (c) 2014-2021 Robert Važan</copyright>
     <tags>crc, crc32, crc-32, crc32c, crc-32c, castagnoli, managed</tags>
   </metadata>
 </package>
